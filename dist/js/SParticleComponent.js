@@ -71,7 +71,7 @@ var SParticleComponent = function (_SWebComponent) {
    * Css
    */
 		value: function css(componentName, componentNameDash) {
-			return '\n\t\t\t' + componentNameDash + ' {\n\t\t\t\tposition: absolute;\n\t\t\t}\n\t\t';
+			return '\n\t\t\t' + componentNameDash + ' {\n\t\t\t\tdisplay: block;\n\t\t\t\tposition: absolute;\n\t\t\t}\n\t\t';
 		}
 	}, {
 		key: 'defaultProps',

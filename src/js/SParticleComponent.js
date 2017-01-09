@@ -22,6 +22,7 @@ export default class SParticleComponent extends SWebComponent {
 	static css(componentName, componentNameDash) {
 		return `
 			${componentNameDash} {
+				display: block;
 				position: absolute;
 			}
 		`;
