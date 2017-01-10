@@ -35,11 +35,6 @@ export default class SParticleComponent extends SWebComponent {
 	componentMount() {
 		super.componentMount();
 
-		// set position
-		__style(this, {
-			position : 'absolute'
-		});
-
 		let lifetime = this.props.lifetime;
 		if ( ! lifetime) {
 			// get the animation properties

@@ -44,11 +44,6 @@ var SParticleComponent = function (_SWebComponent) {
 
 			_get(SParticleComponent.prototype.__proto__ || Object.getPrototypeOf(SParticleComponent.prototype), 'componentMount', this).call(this);
 
-			// set position
-			__style(this, {
-				position: 'absolute'
-			});
-
 			var lifetime = this.props.lifetime;
 			if (!lifetime) {
 				// get the animation properties
