@@ -19,7 +19,7 @@ export default class SParticleComponent extends SWebComponent {
 	/**
 	 * Css
 	 */
-	static css(componentName, componentNameDash) {
+	static defaultCss(componentName, componentNameDash) {
 		return `
 			${componentNameDash} {
 				display: block;
