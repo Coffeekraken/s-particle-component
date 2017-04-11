@@ -22,6 +22,35 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * @name 		SParticleComponent
+ * @extends 	SWebComponent
+ * Simple webcomponent that will monitor his animation and will self destroy itself at the end of it
+ * @example 	html
+ * <style>
+ * 	.my-cool-particle {
+ * 		position:absolute; top:50%; left:50%; transform:translateX(-50%) translateY(-50%);
+ * 		width: 50px; height: 50px; border-radius:50%;
+ * 		background: red;
+ * 		animation: my-cool-particle .5s ease-in-out 0s;
+ * 	}
+ * 	@keyframes my-cool-particle {
+ * 	    0% { transform:translateX(-50%) translateY(-50%) scale(0,0); opacity:0; }
+ * 	    80% { transform:translateX(-50%) translateY(-50%) scale(.8,.8); opacity:1; }
+ * 	    100% { transform:translateX(-50%) translateY(-50%) scale(1,1); opacity:0; }
+ * 	}
+ * </style>
+ * <script>
+ * 	setInterval(function() {
+ * 	 	var particle = document.createElement('s-particle');
+ * 	 	particle.classList.add('my-cool-particle');
+ * 	 	document.body.appendChild(particle);
+ * 	}, 1000);
+ * </script>
+ * <s-particle class="my-cool-particle"></s-particle>
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+
 var SParticleComponent = function (_SWebComponent) {
 	_inherits(SParticleComponent, _SWebComponent);
 
@@ -38,6 +67,7 @@ var SParticleComponent = function (_SWebComponent) {
 		/**
    * Mount component
    * @definition 		SWebComponent.componentMount
+   * @protected
    */
 		value: function componentMount() {
 			var _this2 = this;
@@ -64,6 +94,7 @@ var SParticleComponent = function (_SWebComponent) {
 
 		/**
    * Css
+   * @protected
    */
 		value: function defaultCss(componentName, componentNameDash) {
 			return '\n\t\t\t' + componentNameDash + ' {\n\t\t\t\tdisplay: block;\n\t\t\t\tposition: absolute;\n\t\t\t}\n\t\t';
@@ -75,11 +106,14 @@ var SParticleComponent = function (_SWebComponent) {
 		/**
    * Default props
    * @definition 		SWebComponent.defaultProps
+   * @protected
    */
 		get: function get() {
 			return {
 				/**
-     * Specify the particle lifetime. It not specified, will be auto-detected from his animation.
+     * Specify the particle lifetime in ms. If not specified, will be auto-detected from his animation.
+     * @prop
+     * @type 		{Number}
      */
 				lifetime: null
 			};
