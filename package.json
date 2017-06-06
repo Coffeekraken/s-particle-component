@@ -1,6 +1,6 @@
 {
 	"name": "coffeekraken-s-particle-component",
-	"version": "0.0.2",
+	"version": "1.0.0",
 	"description": "Simple webcomponent that will monitor his animation and will self destroy itself at the end of it",
 	"main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
@@ -45,7 +45,7 @@
   }],
 	"license": "MIT",
   "dependencies": {
-    "coffeekraken-sugar": "^0.0.2"
+    "coffeekraken-sugar": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
