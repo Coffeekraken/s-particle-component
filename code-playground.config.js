@@ -53,7 +53,6 @@ module.exports = {
 		js : {
 			language : 'js',
 			data : `
-				import 'webcomponents.js/webcomponents-lite'
 				import './dist/index'
 				setInterval(function() {
 					var particle = document.createElement('s-particle');
